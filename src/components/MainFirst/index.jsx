@@ -122,8 +122,10 @@ export default function MainFirst() {
           ))}
         </h2>
       </CenterVisual>
-      <GoDown>
-        <span></span>
+      <GoDown color={blackOrWhite}>
+        <span>
+          <img src={`/Arrow ${currentSetIndex}.svg`} alt="arrow"></img>
+        </span>
       </GoDown>
     </Contents>
   );

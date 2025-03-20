@@ -1,8 +1,30 @@
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 export const Wrapper = styled.div`
-  display: flex;
   height: 100vh;
+`;
+
+export const GlobalStyles = createGlobalStyle`
+  /* 모든 요소의 스크롤바 숨기기 */
+  * {
+    -ms-overflow-style: none;  /* IE, Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+  
+  /* Chrome, Safari, Opera에서 스크롤바 숨기기 */
+  *::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+export const BackgroundContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: -1; // 다른 콘텐츠 뒤에 배치
 `;
 
 export const Background = styled.div`
@@ -10,7 +32,6 @@ export const Background = styled.div`
   background-color: ${(props) => props.background || "#101e2b"};
   transition: background-color 0.2s ease;
   position: relative;
-  z-index: 1;
 
   &::before {
     content: "";
@@ -46,4 +67,16 @@ export const ColorItem = styled.div`
   &:hover {
     opacity: 0.8;
   }
+`;
+
+export const MainContainer = styled.div`
+  height: 100vh;
+  transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+`;
+
+export const Section = styled.div`
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
 `;

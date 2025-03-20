@@ -2,16 +2,13 @@ import styled from "styled-components";
 
 export const Contents = styled.div`
   font-family: "Inter";
-  position: absolute;
-  z-index: 9;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100vh;
   background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 `;
 
 export const CenterVisual = styled.div`
@@ -66,9 +63,18 @@ export const GoDown = styled.div`
   width: 40px;
   height: 40px;
   border-radius: 40px;
-  border: 1px solid white;
+  border: 1px solid ${(props) => props.color};
   position: absolute;
   bottom: 100px;
   left: 50%;
   transform: translate(-50%, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s;
+
+  &:hover {
+    transform: translate(-50%, 0) scale(1.05);
+    cursor: pointer;
+  }
 `;
