@@ -24,7 +24,7 @@ export default function MainPage() {
 
   // 배경색들만 배열로 가져오기 (UI에 표시할 색상)
   const backgroundColors = [
-    "#ffffff",
+    "#F1F1F1",
     "#86D7FF",
     "#1E6DFF",
     "#0143BE",
@@ -161,7 +161,7 @@ export default function MainPage() {
           <MainFirst />
         </Section>
         <Section>
-          <MainSecond />
+          <MainSecond currentSection={currentSection} />
         </Section>
         <Section>
           <MainThird></MainThird>

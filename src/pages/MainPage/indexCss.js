@@ -48,18 +48,20 @@ export const Background = styled.div`
 export const ColorPicker = styled.div`
   position: fixed;
   z-index: 999;
-  top: 50%;
-  left: 50px;
+  bottom: 2%;
+  left: 2%;
   transform: translate(0, -50%);
   display: flex;
-  flex-direction: column;
-  gap: 6px;
+  flex-wrap: wrap;
+  width: 95px;
+  gap: 10px;
 `;
 
 export const ColorItem = styled.div`
-  width: ${(props) => (props.selected ? "35px" : "25px")};
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
   border: ${(props) => (props.selected ? `1px solid ${props.bow}` : "none")};
-  height: 12px;
   background-color: ${(props) => props.color};
   transition: width 0.3s ease;
   cursor: pointer;

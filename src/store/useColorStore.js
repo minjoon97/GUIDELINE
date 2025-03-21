@@ -3,7 +3,7 @@ import { create } from "zustand";
 // 색상 세트 정의
 const colorSets = [
   {
-    backgroundColor: "#ffffff",
+    backgroundColor: "#F1F1F1",
     pointColor: "#003099",
     blackOrWhite: "#000000",
   },
@@ -35,8 +35,8 @@ const colorSets = [
 ];
 
 const useColorStore = create((set) => ({
-  ...colorSets[5],
-  currentSetIndex: 5, // 현재 사용 중인 세트 인덱스 추가
+  ...colorSets[4],
+  currentSetIndex: 4, // 현재 사용 중인 세트 인덱스 추가
 
   // 액션: 색상 세트로 모든 색상 한번에 변경
   setColorSet: (index) =>
