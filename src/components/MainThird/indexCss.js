@@ -20,16 +20,16 @@ export const ListItem = styled.div`
   background-color: white;
   transition: 0.2s;
 
-  & > p {
-    font-size: 14px;
-    font-weight: 300;
-    color: rgba(0, 0, 0, 0.8);
-  }
-
   &:hover {
     background-color: rgba(255, 255, 255, 0.8);
     cursor: pointer;
   }
+`;
+
+export const Descrip = styled.p`
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.8);
 `;
 
 export const Top = styled.div`

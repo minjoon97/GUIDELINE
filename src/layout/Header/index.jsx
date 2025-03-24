@@ -1,14 +1,17 @@
+import { Link } from "react-router-dom";
 import useColorStore from "../../store/useColorStore";
 import { HeaderMenu, LastDiv, Logo, Wrapper } from "./indexCss";
 
 export default function Header() {
-  const { blackOrWhite, currentSetIndex } = useColorStore();
+  const { blackOrWhite, setColorSet, currentSetIndex } = useColorStore();
 
   return (
     <Wrapper>
-      <Logo>
-        <img src={`/mainObject${currentSetIndex}.svg`} alt="mainObject"></img>
-      </Logo>
+      <Link to="/">
+        <Logo>
+          <img src={`/mainObject${currentSetIndex}.svg`} alt="mainObject"></img>
+        </Logo>
+      </Link>
       <HeaderMenu color={blackOrWhite}>
         <li
           onClick={() =>
@@ -20,7 +23,20 @@ export default function Header() {
         >
           개인 포트폴리오
         </li>
-        <li>에이전시 포트폴리오</li>
+
+        <li
+          onClick={() => {
+            setColorSet(0);
+          }}
+        >
+          <Link
+            to="/agencyportfolio"
+            style={{ color: "inherit", textDecoration: "none" }}
+          >
+            에이전시 포트폴리오
+          </Link>
+        </li>
+
         <li
           onClick={() =>
             window.open("https://minjoon97.github.io/portfolioSite/", "_blank")

@@ -22,6 +22,10 @@ export default function MainPage() {
   const [isScrolling, setIsScrolling] = useState(false);
   const [touchStartY, setTouchStartY] = useState(0);
 
+  useEffect(() => {
+    setColorSet(4);
+  }, []);
+
   // 배경색들만 배열로 가져오기 (UI에 표시할 색상)
   const backgroundColors = [
     "#F1F1F1",
