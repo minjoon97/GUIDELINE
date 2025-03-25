@@ -57,7 +57,7 @@ export default function MainSecond({ currentSection }) {
               <Introduction>
                 안녕하세요! 의미있는 인생을 꿈꾸는 저는 공대생 출신 디자이너
                 김민준입니다. 디자인이 너무 좋아서 졸업 후 디자이너로의 전향을
-                결심했고, 현재도 끊임없이 배우며 성장하고 있습니다!
+                결심했고, 현재 끊임없이 배우며 성장하고 있습니다!
               </Introduction>
               <SkillBox>
                 <Label>기술스택</Label>

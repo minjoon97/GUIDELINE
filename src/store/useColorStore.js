@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 // 색상 세트 정의
 const colorSets = [
@@ -34,21 +35,30 @@ const colorSets = [
   },
 ];
 
-const useColorStore = create((set) => ({
-  ...colorSets[4],
-  currentSetIndex: 4, // 현재 사용 중인 세트 인덱스 추가
+// persist 미들웨어를 사용하여 localStorage에 상태 저장
+const useColorStore = create(
+  persist(
+    (set) => ({
+      ...colorSets[4],
+      currentSetIndex: 4, // 현재 사용 중인 세트 인덱스
 
-  // 액션: 색상 세트로 모든 색상 한번에 변경
-  setColorSet: (index) =>
-    set({
-      ...colorSets[index],
-      currentSetIndex: index,
+      // 액션: 색상 세트로 모든 색상 한번에 변경
+      setColorSet: (index) =>
+        set({
+          ...colorSets[index],
+          currentSetIndex: index,
+        }),
+
+      // 개별 색상 변경 함수들도 유지
+      setBackgroundColor: (color) => set({ backgroundColor: color }),
+      setPointColor: (color) => set({ pointColor: color }),
+      setBlackOrWhite: (color) => set({ blackOrWhite: color }),
     }),
-
-  // 개별 색상 변경 함수들도 유지
-  setBackgroundColor: (color) => set({ backgroundColor: color }),
-  setPointColor: (color) => set({ pointColor: color }),
-  setBlackOrWhite: (color) => set({ blackOrWhite: color }),
-}));
+    {
+      name: "color-settings", // localStorage에 저장될 키 이름
+      getStorage: () => localStorage, // 사용할 스토리지 지정
+    }
+  )
+);
 
 export default useColorStore;
