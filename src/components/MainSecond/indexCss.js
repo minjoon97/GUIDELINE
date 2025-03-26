@@ -13,6 +13,11 @@ export const ContentBox = styled.div`
   width: 90%;
   display: flex;
   justify-content: center;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
 `;
 
 export const Menu = styled.ul`
@@ -23,14 +28,21 @@ export const Menu = styled.ul`
   font-size: 14px;
   transform: translate(0, 20px);
 
+  @media (max-width: 700px) {
+    margin: 0 auto;
+    flex-direction: row;
+    transform: translate(0, 0);
+    padding-right: 0;
+  }
+
   & > li:nth-of-type(1) {
-    font-weight: ${(props) => (props.menuState === 0 ? 500 : 200)};
-    opacity: ${(props) => (props.menuState === 0 ? 1 : 0.5)};
+    font-weight: ${(props) => (props.$menuState === 0 ? 500 : 200)};
+    opacity: ${(props) => (props.$menuState === 0 ? 1 : 0.5)};
   }
 
   & > li:nth-of-type(2) {
-    font-weight: ${(props) => (props.menuState === 1 ? 500 : 200)};
-    opacity: ${(props) => (props.menuState === 1 ? 1 : 0.5)};
+    font-weight: ${(props) => (props.$menuState === 1 ? 500 : 200)};
+    opacity: ${(props) => (props.$menuState === 1 ? 1 : 0.5)};
   }
 
   & > li:hover {
@@ -46,6 +58,11 @@ export const InfoBox = styled.div`
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   overflow: hidden;
+
+  @media (max-width: 700px) {
+    margin: 0 auto;
+    height: 500px;
+  }
 `;
 
 export const IntroBox = styled.div`
@@ -89,6 +106,11 @@ export const SkillBox = styled.div`
   padding-top: 40px;
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+    gap: 2rem;
+  }
 `;
 
 export const Label = styled.div`
@@ -108,6 +130,10 @@ export const Skills = styled.div`
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
   margin-bottom: 10px;
+
+  @media (max-width: 700px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 `;
 
 export const TechItem = styled.div`

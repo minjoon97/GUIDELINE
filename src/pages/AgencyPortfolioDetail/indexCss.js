@@ -40,6 +40,11 @@ export const Info = styled.div`
   display: flex;
   font-size: 14px;
   margin-bottom: 160px;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+    gap: 30px;
+  }
 `;
 
 export const FirstBox = styled.div`
@@ -47,6 +52,10 @@ export const FirstBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media (max-width: 700px) {
+    width: 100%;
+  }
 `;
 
 export const TitleBox = styled.div`
@@ -126,6 +135,11 @@ export const ImgBox = styled.div`
   gap: 1rem;
   align-items: start;
   padding-bottom: 200px;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const MainImg = styled.div`

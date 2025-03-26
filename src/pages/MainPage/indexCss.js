@@ -30,7 +30,7 @@ export const BackgroundContainer = styled.div`
 export const Background = styled.div`
   width: 25%;
   background-color: ${(props) => props.background || "#101e2b"};
-  transition: background-color 0.2s ease;
+  transition: background-color 0.5s ease;
   position: relative;
 
   &::before {
@@ -42,6 +42,10 @@ export const Background = styled.div`
     width: 1px;
     background-color: ${(props) => props.bow};
     opacity: 0.05;
+
+    @media (max-width: 700px) {
+      display: none;
+    }
   }
 `;
 

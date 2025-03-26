@@ -41,7 +41,7 @@ export const CenterVisual = styled.div`
     display: flex;
 
     & > span {
-      transition: transform 0.2s;
+      transition: 0.5s;
     }
 
     & > span:nth-of-type(1) {
@@ -55,6 +55,14 @@ export const CenterVisual = styled.div`
     & > span:hover {
       cursor: pointer;
       transform: rotate(8deg);
+    }
+
+    @media (max-width: 700px) {
+      font-size: 72px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 60px;
     }
   }
 `;

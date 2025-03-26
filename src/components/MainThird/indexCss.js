@@ -41,6 +41,20 @@ export const Top = styled.div`
 export const TopLeft = styled.div`
   font-weight: 500;
 
+  & > p:nth-of-type(1) {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    & > span {
+      border: 1px solid rgba(0, 0, 0, 0.5);
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 400;
+      padding: 2px 4px;
+    }
+  }
+
   & > p:nth-of-type(2) {
     font-size: 13px;
     opacity: 0.7;

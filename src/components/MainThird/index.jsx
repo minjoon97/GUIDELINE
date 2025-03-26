@@ -23,7 +23,9 @@ export default function MainThird() {
       >
         <Top>
           <TopLeft>
-            <p>개인 디자인 포트폴리오 (외부링크)</p>
+            <p>
+              개인 디자인 포트폴리오<span>외부링크</span>
+            </p>
             <p>2020 - 2023</p>
           </TopLeft>
           <ButtonBox color={backgroundColor}>
@@ -62,7 +64,9 @@ export default function MainThird() {
       >
         <Top>
           <TopLeft>
-            <p>개발 프로젝트 (외부링크)</p>
+            <p>
+              개발 프로젝트<span>외부링크</span>
+            </p>
             <p>2024 - 2025</p>
           </TopLeft>
           <ButtonBox color={backgroundColor}>

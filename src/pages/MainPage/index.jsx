@@ -22,6 +22,34 @@ export default function MainPage() {
   const [isScrolling, setIsScrolling] = useState(false);
   const [touchStartY, setTouchStartY] = useState(0);
 
+  const [bgColors, setBgColors] = useState([
+    backgroundColor,
+    backgroundColor,
+    backgroundColor,
+    backgroundColor,
+  ]);
+
+  // 색상 세트가 변경될 때 배경색을 순차적으로 업데이트
+  useEffect(() => {
+    // 첫 번째 배경 변경 (가장 오른쪽)
+    setBgColors((prev) => [backgroundColor, prev[1], prev[2], prev[3]]);
+
+    // 두 번째 배경 변경
+    setTimeout(() => {
+      setBgColors((prev) => [prev[0], backgroundColor, prev[2], prev[3]]);
+    }, 10);
+
+    // 세 번째 배경 변경
+    setTimeout(() => {
+      setBgColors((prev) => [prev[0], prev[1], backgroundColor, prev[3]]);
+    }, 30);
+
+    // 네 번째 배경 변경 (가장 왼쪽)
+    setTimeout(() => {
+      setBgColors((prev) => [prev[0], prev[1], prev[2], backgroundColor]);
+    }, 70);
+  }, [backgroundColor]);
+
   useEffect(() => {
     setColorSet(4);
   }, []);
@@ -172,10 +200,10 @@ export default function MainPage() {
         </Section>
       </MainContainer>
       <BackgroundContainer>
-        <Background background={backgroundColor} bow={blackOrWhite} />
-        <Background background={backgroundColor} bow={blackOrWhite} />
-        <Background background={backgroundColor} bow={blackOrWhite} />
-        <Background background={backgroundColor} bow={blackOrWhite} />
+        <Background background={bgColors[0]} bow={blackOrWhite} />
+        <Background background={bgColors[1]} bow={blackOrWhite} />
+        <Background background={bgColors[2]} bow={blackOrWhite} />
+        <Background background={bgColors[3]} bow={blackOrWhite} />
       </BackgroundContainer>
     </Wrapper>
   );

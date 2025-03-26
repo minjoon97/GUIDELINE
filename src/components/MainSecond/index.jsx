@@ -30,7 +30,7 @@ export default function MainSecond({ currentSection }) {
   return (
     <Contents>
       <ContentBox>
-        <Menu menuState={menuState} style={{ color: pointColor }}>
+        <Menu $menuState={menuState} style={{ color: pointColor }}>
           <li
             onClick={() => {
               setMenuState(0);
