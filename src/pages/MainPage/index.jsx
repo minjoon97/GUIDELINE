@@ -96,6 +96,19 @@ export default function MainPage() {
     }
   };
 
+  // 커스텀 이벤트 리스너 추가 (MainFirst에서 발생시키는 이벤트)
+  useEffect(() => {
+    const handleMainScrollDown = () => {
+      scrollDown();
+    };
+
+    window.addEventListener("mainScrollDown", handleMainScrollDown);
+
+    return () => {
+      window.removeEventListener("mainScrollDown", handleMainScrollDown);
+    };
+  }, [currentSection, isScrolling]);
+
   // 휠 이벤트 처리
   useEffect(() => {
     const handleWheel = (e) => {

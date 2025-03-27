@@ -76,6 +76,13 @@ export default function MainFirst() {
     handleLetterClick(index, "next");
   };
 
+  // 페이지 스크롤 다운 함수
+  const handleScrollDown = () => {
+    // MainPage 컴포넌트의 scrollDown 함수 호출을 위한 커스텀 이벤트 발생
+    const scrollDownEvent = new CustomEvent("mainScrollDown");
+    window.dispatchEvent(scrollDownEvent);
+  };
+
   return (
     <Contents>
       <CenterVisual color={`${pointColor} ${blackOrWhite}`}>
@@ -122,7 +129,7 @@ export default function MainFirst() {
           ))}
         </h2>
       </CenterVisual>
-      <GoDown color={blackOrWhite}>
+      <GoDown color={blackOrWhite} onClick={handleScrollDown}>
         <span>
           <img src={`/Arrow ${currentSetIndex}.svg`} alt="arrow"></img>
         </span>
