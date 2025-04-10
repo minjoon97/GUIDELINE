@@ -93,7 +93,7 @@ export default function MainSecond({ currentSection }) {
               <CarrerItem>
                 <div>
                   <p>잇다소프트</p>
-                  <p>2023.06 - 2024.01</p>
+                  <p>2023.06 - 2024.04</p>
                 </div>
                 <p>디자인팀 디자이너</p>
               </CarrerItem>
